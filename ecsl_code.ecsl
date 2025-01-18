@@ -1,16 +1,22 @@
-{% block_start white_cat %}
+{% block_start car %}
 
-<cat>
-properties:
-    <property name="name" value="Bars" />
-    <property name="age" value="5" />
-    <property name="color" value="white" />
-</cat>
+<Car>
+components:
+    <IdentityComponent>
+        <property name="id" value="cat" />
+    </IdentityComponent>
+    <CatComponent>
+        <property name="type" value=v"0" />
+        <property name="color" value=v"0xFF0000" />
+        <property name="max_speed" value=v"100" />
+        <property name="acceleration" value=v"0.4" />
+    </CatComponent>
+</Car>
 
-{% block_finish white_cat %}
+{% block_finish car %}
 
 <body>
 childs:
-    {% block white_cat %}
-    {% block white_cat %}
+    {% block car %}
+    {% block car %}
 </body>
