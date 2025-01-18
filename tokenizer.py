@@ -30,6 +30,8 @@ class TokenType(Enum):
     NAME = 5
     EQUAL = 6
     COLON = 7
+    LEFT_FIGURE_BRACKET = 8
+    RIGHT_FIGURE_BRACKET = 9
 
 
 class Tokenizer:
@@ -86,6 +88,10 @@ class Tokenizer:
                 tokens.append(Token(TokenType.EQUAL))
             elif symbol == ":":
                 tokens.append(Token(TokenType.COLON))
+            elif symbol == "{" and text[i + 1] == "%":
+                tokens.append(Token(TokenType.LEFT_FIGURE_BRACKET))
+            elif symbol == "%" and text[i + 1] == "}":
+                tokens.append(Token(TokenType.RIGHT_FIGURE_BRACKET))
 
             i += 1
 

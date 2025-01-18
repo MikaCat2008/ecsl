@@ -1,0 +1,16 @@
+{% block_start white_cat %}
+
+<cat>
+properties:
+    <property name="name" value="Bars" />
+    <property name="age" value="5" />
+    <property name="color" value="white" />
+</cat>
+
+{% block_finish white_cat %}
+
+<body>
+childs:
+    {% block white_cat %}
+    {% block white_cat %}
+</body>
